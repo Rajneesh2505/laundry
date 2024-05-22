@@ -1,5 +1,6 @@
+
 import React from 'react';
-import "./assets/css/signin.css"
+import "./Assets/Signin.css";
 import { useState } from 'react';
 import axios from "axios"
 import { Link } from 'react-router-dom';
@@ -12,7 +13,7 @@ const Signin = ()=>{
 
    const handleSubmit=(e)=>{
    e.preventDefault()
-    if(data.email=="" || data.password==""){
+    if(data.email==="" || data.password===""){
       setWarningMessage("All fields are mendatory. fill all the fields.")
     }else{
       axios({
@@ -74,24 +75,24 @@ const Signin = ()=>{
                 <div>SIGN IN</div>
                 <div className="warning-message">{warningMessage}</div>
                <div>
-                <label for="email">Email</label>
-               <input name="mobile" type="text" placeholder='Mobile / Email' id="email" onChange={handleData} onBlur={()=>{
+               <input name="mobile" className="input1" type="text" placeholder='Mobile / Email' id="email" onChange={handleData} onBlur={()=>{
                   validator.email &&   validator.email("email",data.email)
                 }}/>
                 {error.email && <div className="error-message">{error.email}</div>}
                </div>
+               <div className="line1"></div>
                 <div>
-                  <label for="password">Password</label>
-                <input name="password" type = "password" placeholder='Password' id="password" onChange={handleData} onBlur={()=>{
+                <input name="password"   className="input2" type = "password" placeholder='Password' id="password" onChange={handleData} onBlur={()=>{
                   validator.password &&   validator.password("password",data.password)
                 }}/>
                 {error.password && <div className="error-message">{error.password}</div>}
                 </div>
+                <div className="line2"></div>
+                <div className="forget">Forget Password?</div>
                 <button className='signin-button' onClick={handleSubmit}>Sign In</button>
               </form>
             </div>
         </div>
     )
 }
-
-export default Signin ;
+export default Signin;
