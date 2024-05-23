@@ -6,8 +6,7 @@ export const SideBar=()=>{
     return(
         <>
 <div className="side-bar">
-<img src={Home} className="home"/>
-
+<img src={Home} className="Home-icon"/>
 <span><img src={More} className="more"/></span>
 <img src={List} className="list"/>
 </div>

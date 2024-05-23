@@ -1,9 +1,10 @@
 
 import React from 'react';
-import "./Assets/Signin.css";
+import "./assets/css/Signin.css";
 import { useState } from 'react';
 import axios from "axios"
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 const Signin = ()=>{
     const [data,setData]=useState({email:"",password:""});
     const [error,setError]=useState({})
@@ -64,6 +65,7 @@ const Signin = ()=>{
     }
     return(
         <div>
+          <Navbar/>
             <div className='div-1'>
               <div className='laundryservice'>Laundry Service</div>
               <div className='line-1'>Doorstep Wash & Dryclean Service</div>
@@ -72,20 +74,20 @@ const Signin = ()=>{
             </div>
             <div className='div-2'>
               <form method="post">
-                <div>SIGN IN</div>
+                <div className="signin-text">SIGN IN</div>
                 <div className="warning-message">{warningMessage}</div>
                <div>
                <input name="mobile" className="input1" type="text" placeholder='Mobile / Email' id="email" onChange={handleData} onBlur={()=>{
                   validator.email &&   validator.email("email",data.email)
                 }}/>
-                {error.email && <div className="error-message">{error.email}</div>}
+                {error.email && <div className="error-message email">{error.email}</div>}
                </div>
                <div className="line1"></div>
                 <div>
                 <input name="password"   className="input2" type = "password" placeholder='Password' id="password" onChange={handleData} onBlur={()=>{
                   validator.password &&   validator.password("password",data.password)
                 }}/>
-                {error.password && <div className="error-message">{error.password}</div>}
+                {error.password && <div className="error-message password">{error.password}</div>}
                 </div>
                 <div className="line2"></div>
                 <div className="forget">Forget Password?</div>
