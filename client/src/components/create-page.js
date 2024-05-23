@@ -41,7 +41,9 @@ export const Create=()=>{
             <img src={images[i]} className="clothe-img" alt={`${product} image`}/>
             <span style={{color: " #1D2022",marginLeft:"10px",marginTop:"3px"}}>{product}</span>
         </div>
-        <div className="qunatity-box" ></div>
+        <div>
+            <input type="text"/>
+        </div>
         <div className="wash-type">
             <img src={WashingMachine} alt="washing-machine"/>
             <img src={Iron} alt="ironing"/>

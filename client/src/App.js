@@ -12,7 +12,7 @@ import { OrderPlace } from './components/order-place'
 function App() {
   return (
     <>
-  <OrderPlace/>
+  <Create/>
     {/* <BrowserRouter>
        <Routes>
         <Route path="/" element={<Signin/>}></Route>
