@@ -1,0 +1,32 @@
+.order-place-container{
+width: 420px;
+height: 420px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #E5E0E0;
+border-radius: 8px;
+opacity: 1;
+border:2px solid black;
+margin:9% 0 0 35%
+}
+.order-place-container>div{
+   margin:auto;
+   margin-top:10%;
+width: 120px;
+height: 120px;
+/* UI Properties */
+background: #5861AE60 0% 0% no-repeat padding-box;
+opacity: 1;
+border-radius: 100%;
+}
+
+.order-place-container>div>span{
+    /* width: 56px;
+height: 54px; */
+margin:auto;
+font-size:100px;
+margin-left: 20px;
+background: #5861AE60 0% 0% no-repeat padding-box;
+color:#5861AE;
+opacity: 1;
+}
