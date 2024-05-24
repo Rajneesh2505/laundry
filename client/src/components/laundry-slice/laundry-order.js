@@ -7,27 +7,32 @@ let obj={
 }
 const laundrySlice=createSlice({
     name:"laundrySlice",
-    
     initialState:{
-       products:[]
+       products:[],
+       obj:{
+        ProductName:"",
+        quantity:0,
+        washtype:[],
+        price:0
+    }
     },
     reducers:{
         addName:(state,action)=>{
-obj.ProductName=action.payload
+state.obj.ProductName=action.payload
         },
         addValue:(state,action)=>{
-            obj.quantity+=Number(action.payload)
+            state.obj.quantity+=Number(action.payload)
              
         },
         addWashType:(state,action)=>{
-            obj.washtype.push(action.payload)
+            state.obj.washtype.push(action.payload)
         },
         addPrice:(state,action)=>{
-            obj.price+=Number(action.payload)
+            state.obj.price+=Number(action.payload)
         },
         confirmOrder:(state,action)=>{
-            state.products.push(obj)
-            obj={
+            state.products.push(state.obj)
+            state.obj={
                 ProductName:"",
                 quantity:0,
                 washtype:[],
