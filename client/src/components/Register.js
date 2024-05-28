@@ -117,7 +117,7 @@ confirmPassword:(key,value)=>{
             <div className="laundryservice">Laundry Service</div>
             <div className="line-1">Doorstep Wash & Dryclean Service</div>
             <div className="line-2">Don’t Have An Account?</div>
-           <Link to="/signin"><button className="sidebutton">Signin</button></Link>
+           <Link to="/"><button className="sidebutton">Signin</button></Link>
         </div>
          <div className="div-2">
          <div className="warning-message">{warnMsg}</div>

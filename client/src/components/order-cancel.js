@@ -1,12 +1,14 @@
 import "./assets/css/order.css"
-export const OrderCancell=()=>{
+import { useNavigate } from "react-router-dom"
+export const OrderCancel=()=>{
     let item = ["Shirts", "TShirts", "Trousers", "Jeans"]
+    const navigate=useNavigate()
     return (
         <>
         <div className="order-container">
 <div className="order-header">
     <span>Summary</span>
-    <span>X</span>
+    <span onClick={()=>{navigate("/order-detail")}}>X</span>
 </div>
 <div className="store-detail">
    <div>
@@ -68,7 +70,7 @@ export const OrderCancell=()=>{
     <span>Address</span>
 </div>
 <div className="cancel-order">
-    <button>Cancel Order</button>
+    <button onClick={()=>{navigate("/cancel-order")}}>Cancel Order</button>
 </div>
         </div>
         </>

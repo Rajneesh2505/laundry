@@ -4,7 +4,7 @@ import Towel from "./assets/images/towel.jpg"
 import WashingMachine from "./assets/images/washing-machine.png"
 import Iron from "./assets/images/ironing.jpg"
 import Bleach from "./assets/images/bleach.jpg"
-
+import { useNavigate } from "react-router-dom"
 import Shirts from "./assets/images/shirt.jpg"
 import TShirts from "./assets/images/tshirt.jpg"
 import Trousers from "./assets/images/trouser.jpg"
@@ -21,6 +21,7 @@ export const Create=()=>{
     let item = ["Shirts", "TShirts", "Trousers", "Jeans", "Boxers", "Joggers", "Others"]
     let images=[Shirts, TShirts, Trousers, Jeans, Boxers, Joggers, Others]
     const dispatch=useDispatch()
+    const navigate=useNavigate()
     const obj =useSelector(state=>state.data.products)
     console.log(obj)
     return (
@@ -77,7 +78,7 @@ export const Create=()=>{
 })}
 <div className="proceed-button">
     <button><b>Cancel</b></button>
-    <button style={{backgroundColor:"#5861AE"}}><b>Proceed</b></button>
+    <button style={{backgroundColor:"#5861AE"}} onClick={()=>{navigate("/order-preview")}}><b>Proceed</b></button>
 </div>
 </div>
 

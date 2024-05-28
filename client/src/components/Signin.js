@@ -2,6 +2,7 @@
 import React from 'react';
 import "./assets/css/Signin.css";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -9,6 +10,7 @@ const Signin = ()=>{
     const [data,setData]=useState({email:"",password:""});
     const [error,setError]=useState({})
    const [warningMessage,setWarningMessage]=useState("")
+   const navigate=useNavigate()
 
    ///this function is use to send the data to the backEnd and get the json web token
 
@@ -27,6 +29,7 @@ const Signin = ()=>{
       }).catch(({response})=>{
         setWarningMessage(response.data.message)
       })
+navigate("/create-order")
     }
    }
 
@@ -91,7 +94,7 @@ const Signin = ()=>{
                 </div>
                 <div className="line2"></div>
                 <div className="forget">Forget Password?</div>
-                <button className='signin-button' onClick={handleSubmit}>Sign In</button>
+               <button className='signin-button' onClick={handleSubmit}>Sign In</button>
               </form>
             </div>
         </div>

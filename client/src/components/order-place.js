@@ -1,5 +1,7 @@
 import "./assets/css/order-place.css"
+import { useNavigate } from "react-router-dom"
 export const OrderPlace=()=>{
+    const navigate=useNavigate()
 return (
     <>
     <div className="order-place-container">
@@ -12,7 +14,7 @@ Your order is successfully placed.
 <div className="track-text">
 You can track the delivery in the "Orders" section.
 </div>
-    <button className="track-button">Go to orders</button>
+    <button className="track-button" onClick={()=>{navigate("/order-detail")}}>Go to orders</button>
 
     </div>
     </>

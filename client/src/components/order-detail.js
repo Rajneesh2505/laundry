@@ -1,86 +1,96 @@
-import "./assets/css/order.css"
-import { useState } from "react"
-import { useSelector } from "react-redux"
+import Navbar from "./Navbar"
+import { Footer } from "./footer"
+import { SideBar } from "./side-bar"
+import { useNavigate } from "react-router-dom"
+import "../components/assets/css/order-detail.css"
 export const OrderDetail=()=>{
-    let item = ["Shirts", "TShirts", "Trousers", "Jeans"]
-    const products=useSelector(state=>state.data.products)
-    const [store,setStore]=useState({location:"",storeaddress:"",phone:"",customerAddress:""})
-    const pickUpPrice=90
-   const storeAddress={
-    "Vasant kunj":["No. 9 Kishangarh Vasant Kunj, Delhi","147896325"],
-    "Khan market":["Shop Number 3A Khan Market, Delhi","159874632"],
-    "Mayur vihar":["Chilla Village Mayur Vihar, Delhi","123654789"]
-   }
-   console.log(store)
-    const total=products.reduce((a,b)=>{
-return a+(b.price*b.quantity)
-    },0)
+    const navigate=useNavigate()
+    const detail=[{
+        orderId:1,
+        orderDate:new Date(),
+        StoreLocation:"Jp Nagar",
+        City:"Bangaluru",
+        storePhone:"123456789",
+        totalItem:5,
+        price:200,
+        status:"in washing",
+    },
+    {
+        orderId:2,
+        orderDate:new Date(),
+        StoreLocation:"Jp Nagar",
+        City:"Bangaluru",
+        storePhone:"123456789",
+        totalItem:5,
+        price:200,
+        status:"in washing",
+    },
+    {
+        orderId:3,
+        orderDate:new Date(),
+        StoreLocation:"Jp Nagar",
+        City:"Bangaluru",
+        storePhone:"123456789",
+        totalItem:5,
+        price:200,
+        status:"in washing",
+    },
+    {
+        orderId:4,
+        orderDate:new Date(),
+        StoreLocation:"Jp Nagar",
+        City:"Bangaluru",
+        storePhone:"123456789",
+        totalItem:5,
+        price:200,
+        status:"in washing",
+    }]
     return (
         <>
-        <div className="order-container">
-<div className="order-header">
-    <span>Summary</span>
-    <span>X</span>
-</div>
-<div className="store-detail">
-   <div>
-    <span style={{opacity:".3"}}><b>Store Location</b></span>
-    <select name="storeAddress" onChange={(e)=>{
-        setStore(prev=>{return {
-            ...prev,
-            location:e.target.value,
-            storeaddress:storeAddress[e.target.value][0],
-            phone:storeAddress[e.target.value][1]
-        }})
-    }}>
-        <option value=""></option>
-        <option value="Vasant kunj">Vasant kunj</option>
-        <option value="Khan market">Khan market</option>
-        <option value="Mayur vihar">Mayur vihar</option>
-    </select>
-   </div>
-    <div>
-        <div>Store Address :</div>
-       {store.location && <div>{storeAddress[store.location][0]}</div>}
+     <div className="detail-container">
+        <Navbar/>
+        <div className="order-chart-container">
+<SideBar/>
+<div>
+<div className="order-chart">
+    <div>Order Id</div>
+    <div>Order Date & Time</div>
+    <div>Store Location</div>
+    <div>City</div>
+    <div>Store Phone</div>
+    <div>Total Items</div>
+    <div>Price</div>
+    <div>Status</div>
+    <div></div>
+    <div>View</div>
     </div>
-    <div>
-    <div>Phone</div>
-    {store.location && <div>{storeAddress[store.location][1]}</div>}
-    </div>
-</div>
-<div className="Order-Detail">
-    <span>Order detail</span>
-    {
-        products.map(Item=>{
-            return (
-                <>
-                <div className="show-orders">
-                <div>{Item.ProductName}</div>
-                <div>{Item.washtype}</div>
-                <div>{`${Item.quantity}x${Item.price}=`}</div>
-                <div>{Item.price*Item.quantity}</div>
-                </div>
-                <hr style={{width:"800px",marginLeft:"5%"}}></hr>
-                </>
-            )
-        })
-    }
-<div className="sub-total"><span>Sub Total:</span><span>{total}</span></div>
-<hr className="last-hr"></hr>
-<div className="pickup-charge"><span>Pickup Charges:</span><span>{pickUpPrice}</span></div>
-
-</div>
-<div className="order-header total">
-<span>Total:</span>
-<span className="total-amt">Rs {total+pickUpPrice}</span>
-</div>
-<div className="address">
-    <span>Address</span>
-</div>
-<div className="confirmFooter">
-    <button>Confirm</button>
+<div>
+{detail.map(item=>{
+    return (
+        <>
+        <div className="Orders-info">
+<div>{item.orderId}</div>
+<div>{item.orderDate.toString().slice(0,21)}</div>
+<div>{item.StoreLocation}</div>
+<div >{item.City}</div>
+<div>{item.storePhone}</div>
+<div>{item.totalItem}</div>
+<div>{item.price}</div>
+<div>{item.status}</div>
+<div></div>
+<div onClick={()=>{navigate("/order-cancel")}}>
+    view
 </div>
         </div>
+        <hr style={{width:"1240px",height:"0px",marginLeft:"26px"}}></hr>
+        </>
+    )
+})}
+</div>
+</div>
+</div>
+        <Footer/>
+     </div>
         </>
     )
 }
