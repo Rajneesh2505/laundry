@@ -25,10 +25,14 @@ state.obj.ProductName=action.payload
              
         },
         addWashType:(state,action)=>{
-            state.obj.washtype.push(action.payload)
-        },
-        addPrice:(state,action)=>{
-            state.obj.price+=Number(action.payload)
+            let idx=state.obj.washtype.indexOf(action.payload[0])
+           if(idx!==-1){
+            state.obj.washtype.splice(idx,1,action.payload[0])
+            state.obj.price+=parseInt(action.payload[1])
+           }else{
+            state.obj.washtype.push(action.payload[0])
+           }
+           console.log("obj is",obj)
         },
         confirmOrder:(state,action)=>{
             state.products.push(state.obj)

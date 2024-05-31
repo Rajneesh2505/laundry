@@ -23,6 +23,7 @@ console.log(store)
     const total=products.reduce((a,b)=>{
 return a+(b.price*b.quantity)
     },0)
+    console.log("products for review is ",products)
     return (
         <>
         <div className="order-container">
