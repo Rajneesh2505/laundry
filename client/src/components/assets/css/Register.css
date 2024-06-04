@@ -1,0 +1,214 @@
+#laundryservice{
+    position : absolute;
+    top: 339px;
+    left: 69px;
+    width: 284px;
+    height: 197px;
+   
+    text-align: left;
+    font: normal normal 900 62px/80px Avenir;
+    letter-spacing: 2.48px;
+    color: #5861AE;
+    text-transform: capitalize;
+    opacity: 1;
+}
+#line-1{
+    position : absolute;
+    top: 513px;
+    left: 72px;
+    width: 175px;
+    height: 59px;
+    
+    text-align: left;
+    font: normal normal normal 20px/32px Avenir;
+    letter-spacing: 0.8px;
+    color: #565657;
+    text-transform: capitalize;
+    opacity: 1;
+}
+#line-2{
+    position : absolute;
+    top: 712px;
+    left: 72px;
+    width: 171px;
+    height: 22px;
+   
+    text-align: left;
+    font: normal normal normal 16px/26px Avenir;
+    letter-spacing: 0.64px;
+    color: #565657;
+    text-transform: capitalize;
+    opacity: 1;
+}
+#sidebutton{
+    position : absolute;
+    top: 754px;
+    left: 69px;
+    width: 150px;
+    height: 50px;
+    
+    border: 2px solid #5861AE;
+    border-radius: 4px;
+    opacity: 1;
+}
+#div-2>form>div>input{
+    border : none;
+    background: none;
+  }
+#div-2{
+    position : relative;
+    top: 60px;
+    left: 402px;
+    width: 1030px;
+    height: 766px;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+.register{
+    position : absolute;
+    top: 45px;
+    left: 63px;
+    width: 157px;
+    height: 44px;
+    /* UI Properties */
+    text-align: left;
+    font:  Avenir;
+    letter-spacing: 1.28px;
+    color: #5861AE;
+    text-transform: uppercase;
+    opacity: 1;
+}
+input {
+    border: none;
+    border-collapse: collapse;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+}
+label{
+    text-align: left;
+    font:  "Open Sans" , sans-serif;
+    font-size: 17px;
+    line-height: 27px;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
+.name{
+    position : absolute;
+    top: 139px;
+    left: 68.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
+.email{
+    position : absolute;
+    top: 139px;
+    left: 568.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
+.phone{
+    position : absolute;
+    top: 236px;
+    left: 66.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
+.state{
+    position : absolute;
+    top: 234px;
+    left: 568.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
+.district{
+    position : absolute;
+    top: 333px;
+    left: 68.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
+.pincode{
+    position : absolute;
+    top: 429px;
+    left: 68.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+
+}
+.address{
+    position : absolute;
+    top: 333px;
+    left: 566.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+
+}
+.password{
+    position : absolute;
+    top: 428px;
+    left: 568.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+
+}
+.confirmpassword{
+    position : absolute;
+    top: 535px;
+    left: 66.5px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+}
