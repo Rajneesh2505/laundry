@@ -2,6 +2,7 @@ import Navbar from "./Navbar"
 import { Footer } from "./footer"
 import { SideBar } from "./side-bar"
 import { useNavigate } from "react-router-dom"
+import View from "./assets/images/eye.png"
 import "../components/assets/css/order-detail.css"
 export const OrderDetail=()=>{
     const navigate=useNavigate()
@@ -79,7 +80,7 @@ export const OrderDetail=()=>{
 <div>{item.status}</div>
 <div></div>
 <div onClick={()=>{navigate("/order-cancel")}}>
-    view
+    <img src={View} height={"20px"} width={"20px"}/>
 </div>
         </div>
         <hr style={{width:"1240px",height:"0px",marginLeft:"26px"}}></hr>

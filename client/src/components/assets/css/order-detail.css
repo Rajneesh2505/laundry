@@ -28,6 +28,7 @@ border:1px solid rgba(0,0,0,.1)
     grid-template-rows: repeat(1,auto);
     grid-template-columns: repeat(10,auto);
     justify-items: center;
+    align-items: center;
     margin-top: 10%;
     margin-left:2%;
 }
@@ -45,7 +46,8 @@ border:1px solid rgba(0,0,0,.1)
     display:grid;
     grid-template-rows: repeat(1,auto);
     grid-template-columns: repeat(10,auto);
-    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
     text-align: center;
     margin-left:80px
 }
