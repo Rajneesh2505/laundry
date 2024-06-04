@@ -78,9 +78,7 @@ export const Create=()=>{
                     document.querySelectorAll(`#iron`)[i].src=IronAdded
                 }else{
                     document.querySelectorAll(`#iron`)[i].src=Iron 
-                }
-               
-                                            
+                }                       
                 dispatch(addWashType([e.target.alt,10]))
                                         }}/>
             <img src={Towel} alt="Towel," onClick={(e)=>{
