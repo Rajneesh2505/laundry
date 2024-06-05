@@ -3,12 +3,11 @@ import { useState,useEffect, } from "react"
 
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+let id=0
 export const OrderPreview=()=>{
-    let item = ["Shirts", "TShirts", "Trousers", "Jeans"]
     const products=useSelector(state=>state.data.products)
     const [store,setStore]=useState({location:"",storeaddress:"",phone:"",customerAddress:""})
     const [flag,setFlag]=useState(false)
-    // const [inputAddress,setInputAddress]=useState("")
     const [address,setAddress]=useState([])
     console.log("address is",address)
     const pickUpPrice=90
@@ -18,12 +17,44 @@ export const OrderPreview=()=>{
     "Khan market":["Shop Number 3A Khan Market, Delhi","159874632"],
     "Mayur vihar":["Chilla Village Mayur Vihar, Delhi","123654789"]
    }
-console.log(store)
 
     const total=products.reduce((a,b)=>{
 return a+(b.price*b.quantity)
     },0)
-    console.log("products for review is ",products)
+    const handleOrder=()=>{
+        if(products.length){
+            console.log("id for order is",id)
+                products.forEach(product=>{
+                    fetch("http://localhost:3000/orders/order",{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({order_id:id,...product})
+            }).then(data=>{
+                if(data.ok){
+                    navigate("/order-place")
+                }
+            }).catch(err=>{
+                console.log("err is",err)
+            })
+                })
+            
+            fetch("http://localhost:3000/store-address",{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({product_id:id,...store})
+            }).then(data=>{
+                
+                    navigate("/order-place")
+            }).catch(err=>{
+                console.log("err is",err)
+            })
+            id++
+        }
+    }
     return (
         <>
         <div className="order-container">
@@ -106,9 +137,11 @@ return a+(b.price*b.quantity)
     
 </div>
 <div className="confirmFooter">
-    <button onClick={()=>{navigate("/order-place")}}>Confirm</button>
+    <button onClick={handleOrder}>Confirm</button>
 </div>
         </div>
         </>
     )
 }
+
+id++
