@@ -8,6 +8,7 @@ let obj={
 const laundrySlice=createSlice({
     name:"laundrySlice",
     initialState:{
+        id:new Array(1),
        products:[],
        obj:{
         ProductName:"",
@@ -42,9 +43,12 @@ state.obj.ProductName=action.payload
                 washtype:[],
                 price:0
             }
+        },
+        addId:(state,action)=>{
+            state.id[0]=action.payload
         }
     }
 })
 
-export const {addValue,addName,addPrice,addWashType,confirmOrder}=laundrySlice.actions
+export const {addValue,addName,addPrice,addWashType,confirmOrder,addId}=laundrySlice.actions
 export default laundrySlice.reducer

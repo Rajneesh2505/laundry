@@ -15,8 +15,8 @@ type:Array
     },
     price:{
         type:Number
-    }
+    },
 })
 
-const order=mongoose.model("Orders",orderSchema)
+const order=mongoose.model("orders",orderSchema)
 module.exports=order

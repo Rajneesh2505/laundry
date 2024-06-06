@@ -1,22 +1,29 @@
 import { useEffect,useState } from "react"
 import "./assets/css/order.css"
 import { useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 export const OrderCancel=()=>{
+
+    const id=useSelector(state=>state.data.id)
     const navigate=useNavigate()
+    let [flag,setFlag]=useState(false)
     const [orders,setOrders]=useState([])
     const [storeDetail,setStoreDetail]=useState([])
     useEffect(()=>{
-        fetch("http://localhost:3000/orders/getorder").then(data=>{
-            return data.json()
-        }).then(data=>{
-            console.log("items are",data)
-            setOrders(data)
-            data.filter(item=>{
-                if(item.result.length){     
-                setStoreDetail(item.result)
-                }
-            })
-        })
+       fetch("http://localhost:3000/orders/getorder").then(rwadata=>{
+        return rwadata.json()
+       }).then(data=>{
+       data.filter(item=>{
+        if(item.result[0].product_id==id){
+            setOrders([item])
+            setStoreDetail(item.result)
+                setFlag(!flag)
+        }
+       })
+       
+       }).catch(err=>{
+        console.log(err)
+       })
             },[])
             let totalPrice=(orders.length && orders.reduce((a,b)=>{
                 return a+(b.price*b.quantity)
@@ -31,15 +38,15 @@ export const OrderCancel=()=>{
 <div className="store-detail">
    <div>
     <span style={{opacity:".3"}}><b>Store Location</b></span>
-    <div>{storeDetail && storeDetail[0].location}</div>
+    <div>{flag ? storeDetail[0].location:""}</div>
    </div>
     <div>
         <div>Store Address :</div>
-        <div>{storeDetail && storeDetail[0].storeaddress}</div>
+        <div>{flag?storeDetail[0].storeaddress:" " }</div>
     </div>
     <div>
     <div>Phone</div>
-    <div>{storeDetail && storeDetail[0].phone}</div>
+    <div>{flag ?storeDetail[0].phone:" " }</div>
     </div>
 </div>
 <div className="order-track">
@@ -60,7 +67,6 @@ export const OrderCancel=()=>{
     <span>Order detail</span>
     {
       orders && orders.map(Item=>{
-        console.log("item inside map is",Item)
             return (
                 <>
                 <div className="show-orders">
@@ -85,7 +91,7 @@ export const OrderCancel=()=>{
 </div>
 <div className="address">
     <span>Address :</span>
-    <div className="show-input">{ storeDetail && storeDetail[0].customerAddress}</div>
+    <div className="show-input">{ flag ? storeDetail[0].customerAddress:" " }</div>
 </div>
 <div className="cancel-order">
     <button onClick={()=>{navigate("/cancel-order")}}>Cancel Order</button>

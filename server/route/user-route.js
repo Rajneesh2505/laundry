@@ -44,7 +44,7 @@ if(valid){
         expireIn:Math.floor(Date.now()/1000)+(10*60),
         data:data[0].eemail
     },secretKey)
-    res.status(200).send(auth_token)
+    res.status(200).send([auth_token,data[0].name])
 }else{
     res.status(400).send({
         status:"fail",
@@ -60,11 +60,13 @@ if(valid){
     })
 }
 })
-
-
 })
 
-
+route.get("/getUserName",(req,res)=>{
+   userModel.find({email:req.body.email}).then(data=>{
+    console.log(data)
+   })
+  })
 
 
 module.exports=route

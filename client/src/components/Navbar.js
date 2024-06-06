@@ -1,22 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
 import './assets/css/Navbar.css'
 const Navbar=()=>{
     return(
         <div className='navbar'>
-            {/* <ul>
-                <li className='laundry'>LAUNDRY</li>
-                <li className='home'><Link to = '/'>Home</Link></li>
-                <li className='pricing'><Link to = '/pricing'>Pricing</Link></li>
-                <li className='career'><Link to = '/career'>Career</Link></li>
-                <li><button className='button'>signin</button></li>
-            </ul> */}
             <ul>
                 <li className='laundry'>LAUNDRY</li>
                 <li className='home'>Home</li>
                 <li className='pricing'>Pricing</li>
                 <li className='career'>Career</li>
-                <li><button className='button'>signin</button></li>
+                <li><button className='button'><b>{localStorage.length ? localStorage.getItem("Name"):"Sign In"}</b></button></li>
             </ul>
         </div>
     )
