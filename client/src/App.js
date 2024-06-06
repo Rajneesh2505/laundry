@@ -11,6 +11,7 @@ import { OrderCancel } from './components/order-cancel'
 import { OrderPlace } from './components/order-place'
 import { OrderDetail } from './components/order-detail'
 import { CancelAlert } from './components/alert-order'
+import Noorder from './components/noorderpage'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/order-detail" element={<OrderDetail/>}></Route>
         <Route path="/order-cancel" element={<OrderCancel/>}></Route>
         <Route path="/cancel-order" element={<CancelAlert/>}></Route>
+        <Route path="/no-order" element={<Noorder/>}></Route>
        </Routes>
       </BrowserRouter>
     </>

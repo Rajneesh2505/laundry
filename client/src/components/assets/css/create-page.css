@@ -1,6 +1,16 @@
-
+.createorderdiv{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 1440px;
+    height: 931px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
 .container{
     /* margin-top: 2%; */
+   
 margin-left:3%;
 width: 1380px;
 height: 760px;
@@ -43,9 +53,10 @@ opacity: 1;
 }
 
 .qunatity-box>input{
+    position: absolute;
     width: 63px;
 height: 26px;
-
+left :400px;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border: 1px solid #5861AE;
 border-radius: 2px;

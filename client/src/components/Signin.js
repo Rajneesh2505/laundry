@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer1 from './Footer1';
 import { Footer } from './footer';
+
 const Signin = ()=>{
     const [data,setData]=useState({email:"",password:""});
     const [error,setError]=useState({})
@@ -31,7 +32,7 @@ const Signin = ()=>{
       }).catch(({response})=>{
         setWarningMessage(response.data.message)
       })
-navigate("/create-order")
+navigate("/no-order")
     }
    }
 

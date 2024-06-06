@@ -12,7 +12,8 @@
     box-shadow: 0px 2px 48px #0000000F;
     opacity: 1;
     text-align: center !important;
-    margin-left:3%
+    margin-left:3%;
+    Z-index :1;
   }
   
   .laundry{
