@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./assets/css/Register.css"
 import Navbar from "./Navbar";
+import Footer1 from "./Footer1"
+import { Footer } from "./footer"
 const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState({ value: "" });
   const [form, setForm] = useState({
@@ -120,7 +122,7 @@ const Register = () => {
     },
   };
   return (
-    <div>
+    <div className="maindiv">
       <Navbar />
       <div id="div-1">
         <div id="laundryservice">Laundry Service</div>
@@ -141,6 +143,7 @@ const Register = () => {
             onChange={(e) => setForm({ ...form, name: e.target.value })}
           />
         </div>
+        <div className="line1"></div>
         <div className="email">
           <input
             name="email"
@@ -153,6 +156,7 @@ const Register = () => {
           />
           {err.email && <div className="error-message">{err.email}</div>}
         </div>
+        <div className="line2"></div>
         <div className="phone">
           <input
             name="phone"
@@ -165,11 +169,11 @@ const Register = () => {
           />
           {err.phone && <div className="error-message">{err.phone}</div>}
         </div>
+        <div className="line3"></div>
         <div className="state">
-         <label>State</label>
+         <label className="label">State</label>
           <select
             name="state"
-            placeholder="State"
             onChange={(e) => setForm({ ...form, state: e.target.value })}
           >
             <option value=""></option>
@@ -180,8 +184,9 @@ const Register = () => {
             <option value="maharastra">Maharastra</option>
           </select>
         </div>
+        <div className="line4"></div>
         <div className="district">
-          <label>District</label>
+          <label className="label2">District</label>
           <select
             name="district"
             placeholder="District"
@@ -197,7 +202,8 @@ const Register = () => {
               })}
           </select>
         </div>
-        <div className="address">
+        <div className="line5"></div>
+        <div className="registeraddress">
           <input
             name="address"
             type="text"
@@ -205,6 +211,7 @@ const Register = () => {
             onChange={(e) => setForm({ ...form, address: e.target.value })}
           />
         </div>
+        <div className="line6"></div>
         <div className="pincode">
           <input
             name="pincode"
@@ -218,6 +225,7 @@ const Register = () => {
           />
           {err.pincode && <div className="error-message">{err.pincode}</div>}
         </div>
+        <div className="line7"></div>
         <div className="password">
           <input
             name="password"
@@ -231,6 +239,7 @@ const Register = () => {
           />
           {err.password && <div className="error-message">{err.password}</div>}
         </div>
+        <div className="line8"></div>
         <div className="confirmpassword">
           <input
             name="confirmpassword"
@@ -251,10 +260,16 @@ const Register = () => {
             <div className="error-message">{err.confirmPassword}</div>
           )}
         </div>
+        <div className="line9"></div>
+        <div className="box"></div>
+        <div className="TC">I agree to Terms & Condition receiving marketing and promotional materials</div>
         <div>
-          <button onClick={handleRegister}>Register</button>
+          <button className="buttonregister" onClick={handleRegister}>Register</button>
         </div>
       </div>
+      <div className="endline"></div>
+      <Footer1/>
+      <Footer/>
     </div>
   );
 };

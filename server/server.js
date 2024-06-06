@@ -3,10 +3,14 @@ const app=express()
 const mongoose=require("mongoose")
 const cors=require("cors")
 const userController=require("./route/user-route")
+const orderController=require("./route/order-route")
+const storeController=require("./route/store-route")
 
 // Connection with MongoDB or DataBase
 
-mongoose.connect("mongodb://127.0.0.1:27017/Laundry-Cart")
+mongoose.connect("mongodb+srv://Rajneesh:Rajneesh@laundry-cart.oswq2vb.mongodb.net/laundry-cart?retryWrites=true&w=majority&appName=Laundry-cart")
+
+
 
 
 //Middlewares
@@ -31,3 +35,5 @@ app.listen(PORT,(err)=>{
 
 
 app.use("/user",userController)
+app.use("/orders",orderController)
+app.use("/",storeController)

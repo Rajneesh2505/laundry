@@ -7,7 +7,7 @@ export const CancelAlert=()=>{
         <div className="alert-box">
             <div className="alert-header">
 <span>Alert</span>
-<span>X</span>
+<span onClick={()=>{navigate("/order-cancel")}}>X</span>
             </div>
             <div className="alert-text">
                 <img src="https://img.icons8.com/?size=100&id=Sb9rYobIrMId&format=png&color=000000"/>

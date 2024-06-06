@@ -1,8 +1,26 @@
+import { useEffect,useState } from "react"
 import "./assets/css/order.css"
 import { useNavigate } from "react-router-dom"
 export const OrderCancel=()=>{
-    let item = ["Shirts", "TShirts", "Trousers", "Jeans"]
     const navigate=useNavigate()
+    const [orders,setOrders]=useState([])
+    const [storeDetail,setStoreDetail]=useState([])
+    useEffect(()=>{
+        fetch("http://localhost:3000/orders/getorder").then(data=>{
+            return data.json()
+        }).then(data=>{
+            console.log("items are",data)
+            setOrders(data)
+            data.filter(item=>{
+                if(item.result.length){     
+                setStoreDetail(item.result)
+                }
+            })
+        })
+            },[])
+            let totalPrice=(orders.length && orders.reduce((a,b)=>{
+                return a+(b.price*b.quantity)
+            },0))
     return (
         <>
         <div className="order-container">
@@ -13,17 +31,15 @@ export const OrderCancel=()=>{
 <div className="store-detail">
    <div>
     <span style={{opacity:".3"}}><b>Store Location</b></span>
-    <select>
-        <option></option>
-    </select>
+    <div>{storeDetail && storeDetail[0].location}</div>
    </div>
     <div>
         <div>Store Address :</div>
-        <div>any address</div>
+        <div>{storeDetail && storeDetail[0].storeaddress}</div>
     </div>
     <div>
     <div>Phone</div>
-    <div>123456789</div>
+    <div>{storeDetail && storeDetail[0].phone}</div>
     </div>
 </div>
 <div className="order-track">
@@ -43,31 +59,33 @@ export const OrderCancel=()=>{
 <div className="Order-Detail">
     <span>Order detail</span>
     {
-        item.map(ItemName=>{
+      orders && orders.map(Item=>{
+        console.log("item inside map is",Item)
             return (
                 <>
                 <div className="show-orders">
-                <div>{ItemName}</div>
-                <div>Washing,Ironing</div>
-                <div>5X20=</div>
-                <div>100</div>
+                <div>{Item.ProductName}</div>
+                <div>{ Item.washtype}</div>
+                <div>{`${Item.quantity}X${Item.price}=`}</div>
+                <div>{Item.quantity*Item.price}</div>
                 </div>
                 <hr style={{width:"800px",marginLeft:"5%"}}></hr>
                 </>
             )
         })
     }
-<div className="sub-total"><span>Sub Total:</span><span>400</span></div>
+<div className="sub-total"><span>Sub Total:</span><span>{totalPrice}</span></div>
 <hr className="last-hr"></hr>
 <div className="pickup-charge"><span>Pickup Charges:</span><span>90</span></div>
 
 </div>
 <div className="order-header total">
 <span>Total:</span>
-<span className="total-amt">Rs 490</span>
+<span className="total-amt">Rs {totalPrice+90}</span>
 </div>
 <div className="address">
-    <span>Address</span>
+    <span>Address :</span>
+    <div className="show-input">{ storeDetail && storeDetail[0].customerAddress}</div>
 </div>
 <div className="cancel-order">
     <button onClick={()=>{navigate("/cancel-order")}}>Cancel Order</button>

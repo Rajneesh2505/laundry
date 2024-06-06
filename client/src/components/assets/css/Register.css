@@ -1,3 +1,12 @@
+.maindiv{
+    top: 0px;
+    left: 0px;
+    width: 1440px;
+    height: 1172px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
 #laundryservice{
     position : absolute;
     top: 339px;
@@ -72,29 +81,39 @@
     height: 44px;
     /* UI Properties */
     text-align: left;
-    font:  Avenir;
+    font-family:Avenir;
+    font-size: 32px;
+    line-height: 60px;
     letter-spacing: 1.28px;
     color: #5861AE;
     text-transform: uppercase;
     opacity: 1;
 }
-input {
+#div-2 input {
     border: none;
     border-collapse: collapse;
     background: #F8F9FF 0% 0% no-repeat padding-box;
 }
-label{
+#div-2 select{
+    border: none;
+    border-collapse: collapse;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+}
+#div-2 label{
     text-align: left;
     font:  "Open Sans" , sans-serif;
-    font-size: 17px;
-    line-height: 27px;
+    font-size: 15px;
+    line-height: 22px;
     letter-spacing: 0.6px;
     color: #77838F;
     opacity: 1;
+    border: none;
+    border-collapse: collapse;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
 }
 .name{
     position : absolute;
-    top: 139px;
+   margin-top: 139px;
     left: 68.5px;
     width: 322px;
     height: 27px;
@@ -103,11 +122,24 @@ label{
     font: normal normal normal 17px/27px Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
+    opacity: 1;
+    border: none;
+    border-collapse: collapse;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+}
+#div-2 .line1{
+    position : absolute;
+    top: 181px;
+    left: 61px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
     opacity: 1;
 }
 .email{
     position : absolute;
-    top: 139px;
+    margin-top: 139px;
     left: 568.5px;
     width: 322px;
     height: 27px;
@@ -116,11 +148,22 @@ label{
     font: normal normal normal 17px/27px Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
+    opacity: 1;
+   
+}
+#div-2 .line2{
+    position : absolute;
+    top: 181px;
+    left: 563px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
     opacity: 1;
 }
 .phone{
     position : absolute;
-    top: 236px;
+    margin-top: 236px;
     left: 66.5px;
     width: 322px;
     height: 27px;
@@ -129,24 +172,45 @@ label{
     font: normal normal normal 17px/27px Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
+    opacity: 1;
+    
+}
+#div-2 .line3{
+    position : absolute;
+    top: 278px;
+    left: 61px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
     opacity: 1;
 }
 .state{
     position : absolute;
-    top: 234px;
-    left: 568.5px;
+    margin-top: 234px;
+    left: 705px;
     width: 322px;
     height: 27px;
     /* UI Properties */
     text-align: left;
-    font: normal normal normal 17px/27px Open Sans;
+    font: normal normal normal 15px/22px Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
+    opacity: 1;
+}
+#div-2 .line4{
+    position : absolute;
+    top: 278px;
+    left: 563px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
     opacity: 1;
 }
 .district{
     position : absolute;
-    top: 333px;
+    margin-top: 333px;
     left: 68.5px;
     width: 322px;
     height: 27px;
@@ -155,11 +219,47 @@ label{
     font: normal normal normal 17px/27px Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
+    opacity: 1;
+}
+#div-2 .line5{
+    position : absolute;
+    top: 375px;
+    left: 63px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
+    opacity: 1;
+}
+
+
+.registeraddress{
+    position : absolute;
+    margin-top: 333px;
+    left: 705px;
+    width: 322px;
+    height: 27px;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+
+}
+#div-2 .line6{
+    position : absolute;
+    top: 375px;
+    left: 563px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
     opacity: 1;
 }
 .pincode{
     position : absolute;
-    top: 429px;
+    margin-top: 429px;
     left: 68.5px;
     width: 322px;
     height: 27px;
@@ -171,23 +271,19 @@ label{
     opacity: 1;
 
 }
-.address{
+#div-2 .line7{
     position : absolute;
-    top: 333px;
-    left: 566.5px;
-    width: 322px;
-    height: 27px;
+    top: 471px;
+    left: 63px;
+    width: 398px;
+    height: 0px;
     /* UI Properties */
-    text-align: left;
-    font: normal normal normal 17px/27px Open Sans;
-    letter-spacing: 0.6px;
-    color: #77838F;
+    border: 1px solid #989898;
     opacity: 1;
-
 }
 .password{
     position : absolute;
-    top: 428px;
+    margin-top: 470px;
     left: 568.5px;
     width: 322px;
     height: 27px;
@@ -199,9 +295,19 @@ label{
     opacity: 1;
 
 }
+#div-2 .line8{
+    position : absolute;
+    top: 512px;
+    left: 563px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
+    opacity: 1;
+}
 .confirmpassword{
     position : absolute;
-    top: 535px;
+    margin-top: 535px;
     left: 66.5px;
     width: 322px;
     height: 27px;
@@ -210,5 +316,64 @@ label{
     font: normal normal normal 17px/27px Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
+    opacity: 1;
+}
+#div-2 .line9{
+    position : absolute;
+    top: 577px;
+    left: 63px;
+    width: 398px;
+    height: 0px;
+    /* UI Properties */
+    border: 1px solid #989898;
+    opacity: 1;
+}
+.box{
+    position : absolute;
+    top: 642px;
+    left: 220px;
+    width: 22px;
+    height: 22px;
+    /* UI Properties */
+    background: transparent url('../images/CD.svg') 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 3px;
+    opacity: 1;
+}
+.TC{
+    position : absolute;
+    top: 642px;
+    left: 254px;
+    width: 566px;
+    height: 22px;
+    /* UI Properties */
+    text-align: left;
+    text-decoration: underline;
+    font: normal normal normal 14px/20px Open Sans;
+    letter-spacing: 0.49px;
+    color: #5861AE;
+    opacity: 1;
+}
+.buttonregister{
+    position : absolute;
+    top: 694.5px;
+    left: 438.25px;
+    width: 150px;
+    height: 50px;
+    /* UI Properties */
+    color: white;
+    background: #5861AE 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+}
+ .endline{
+    position: absolute;
+    top: 849px;
+    left: 0px;
+    width: 1440px;
+    height: 2px;
+    /* UI Properties */
+    background: #5861AE 0% 0% no-repeat padding-box;
+    box-shadow: 0px -3px 6px #0000000B;
     opacity: 1;
 }

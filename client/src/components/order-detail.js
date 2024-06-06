@@ -2,49 +2,34 @@ import Navbar from "./Navbar"
 import { Footer } from "./footer"
 import { SideBar } from "./side-bar"
 import { useNavigate } from "react-router-dom"
+import { useState,useEffect } from "react"
+import View from "./assets/images/eye.png"
 import "../components/assets/css/order-detail.css"
 export const OrderDetail=()=>{
+    let status = ["Picked", "Washed", "Ironed", "Delivered"]
+    const [orders,setOrders]=useState([])
+    const [storeDetail,setStoreDetail]=useState([])
+    useEffect(()=>{
+        fetch("http://localhost:3000/orders/getorder").then(data=>{
+            return data.json()
+        }).then(data=>{
+            setOrders(data)
+            data.filter(item=>{
+                if(item.result.length){
+                setStoreDetail(item.result)
+                }
+            })
+        })
+            },[])
     const navigate=useNavigate()
-    const detail=[{
-        orderId:1,
-        orderDate:new Date(),
-        StoreLocation:"Jp Nagar",
-        City:"Bangaluru",
-        storePhone:"123456789",
-        totalItem:5,
-        price:200,
-        status:"in washing",
-    },
-    {
-        orderId:2,
-        orderDate:new Date(),
-        StoreLocation:"Jp Nagar",
-        City:"Bangaluru",
-        storePhone:"123456789",
-        totalItem:5,
-        price:200,
-        status:"in washing",
-    },
-    {
-        orderId:3,
-        orderDate:new Date(),
-        StoreLocation:"Jp Nagar",
-        City:"Bangaluru",
-        storePhone:"123456789",
-        totalItem:5,
-        price:200,
-        status:"in washing",
-    },
-    {
-        orderId:4,
-        orderDate:new Date(),
-        StoreLocation:"Jp Nagar",
-        City:"Bangaluru",
-        storePhone:"123456789",
-        totalItem:5,
-        price:200,
-        status:"in washing",
-    }]
+    let totalPrice=(orders.length && orders.reduce((a,b)=>{
+        return a+(b.price*b.quantity)
+    },0))
+    let totalItem=(orders.length && orders.reduce((a,b)=>{
+        return a+b.quantity
+    },0))
+    
+    
     return (
         <>
      <div className="detail-container">
@@ -65,21 +50,22 @@ export const OrderDetail=()=>{
     <div>View</div>
     </div>
 <div>
-{detail.map(item=>{
+{storeDetail && storeDetail.map(item=>{
     return (
         <>
         <div className="Orders-info">
-<div>{item.orderId}</div>
-<div>{item.orderDate.toString().slice(0,21)}</div>
-<div>{item.StoreLocation}</div>
-<div >{item.City}</div>
-<div>{item.storePhone}</div>
-<div>{item.totalItem}</div>
-<div>{item.price}</div>
-<div>{item.status}</div>
+        <div>{item.product_id}</div>
+<div>{item.date.slice(0,21)}</div>
+<div>Bangaluru</div>
+<div >{item.location}</div>
+<div>{item.phone}</div>
+<div>{totalItem
+}</div>
+<div>{totalPrice}</div>
+<div>{status[Math.floor((Math.random()/4)*10)]}</div>
 <div></div>
 <div onClick={()=>{navigate("/order-cancel")}}>
-    view
+    <img src={View} height={"20px"} width={"20px"} style={{marginRight:'8px'}}/>
 </div>
         </div>
         <hr style={{width:"1240px",height:"0px",marginLeft:"26px"}}></hr>

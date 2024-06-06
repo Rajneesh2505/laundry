@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer1 from './Footer1';
+import { Footer } from './footer';
 const Signin = ()=>{
     const [data,setData]=useState({email:"",password:""});
     const [error,setError]=useState({})
@@ -97,6 +99,8 @@ navigate("/create-order")
                <button className='signin-button' onClick={handleSubmit}>Sign In</button>
               </form>
             </div>
+            <Footer1/>
+            <Footer/>
         </div>
     )
 }

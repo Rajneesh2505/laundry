@@ -9,7 +9,7 @@ export const SideBar=()=>{
         <>
 <div className="side-bar">
 <img src={Home} className="Home-icon"/>
-<span onClick={()=>{navigate("/create-order")}}><img src={More} onClick={()=>{navigate("/create-order")}} className="more"/></span>
+<span  onClick={()=>{navigate("/create-order")}}><img src={More} onClick={()=>{navigate("/create-order")}} className="more"/></span>
 <img src={List} className="list"/>
 </div>
         </>
