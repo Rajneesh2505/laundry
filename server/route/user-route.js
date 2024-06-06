@@ -77,7 +77,16 @@ route.get('/getorders', async(req,res)=>{
     }
 })
 
+// route to create orders page 
 
+route.post('/createorder', async(req,res)=>{
+    try{
+      
+    }
+    catch(e){
+
+    }
+})
 
 
 
