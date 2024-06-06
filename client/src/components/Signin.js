@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer1 from './Footer1';
+import { Footer } from './footer';
+
 const Signin = ()=>{
     const [data,setData]=useState({email:"",password:""});
     const [error,setError]=useState({})
@@ -29,10 +32,11 @@ const Signin = ()=>{
         console.log("Token",Data.data[0])
         console.log("Name",Data.data[1])
         localStorage.length? localStorage.setItem("Name",Data.data[1]):localStorage.setItem("Name","")
-        localStorage.length >0 ? navigate("/create-order"): navigate("/");
+        localStorage.length >0 ? navigate("/no-order"): navigate("/");
       }).catch(({response})=>{
         setWarningMessage(response.data.message)
       })
+navigate("/no-order")
     }
     
    }
@@ -101,6 +105,15 @@ const Signin = ()=>{
                <button className='signin-button' onClick={handleSubmit}>Sign In</button>
               </form>
             </div>
+            <div className="Footer-section">
+      <div>
+      <Footer1/>
+      </div>
+     <div>
+     <Footer/>
+     </div>
+     
+     </div>
         </div>
     )
 }

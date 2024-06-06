@@ -5,6 +5,7 @@ const {hashPassword}=require("../utility")
 const crypto=require("crypto")
 const jwt=require("jsonwebtoken")
 const bcrypt=require("bcryptjs")
+const orders = require("../models/get-orders")
 
 // for secretkey
 const secretKey=crypto.randomBytes(64).toString("hex")
@@ -62,11 +63,37 @@ if(valid){
 })
 })
 
+
+// route for order details page 
+
+// route.get('/getorders', async(req,res)=>{
+//     try{
+//         const getorders = orders.find();
+//         req.status(200).json({getorders})
+//     }
+//     catch(e){
+//         req.status(400).json({message : e.message})
+//     }
+// })
+
+// route to create orders page 
+
+// route.post('/createorder', async(req,res)=>{
+//     try{
+      
+//     }
+//     catch(e){
+
+//     }
+// })
+
+
 route.get("/getUserName",(req,res)=>{
    userModel.find({email:req.body.email}).then(data=>{
     console.log(data)
    })
   })
+
 
 
 module.exports=route

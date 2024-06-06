@@ -1,5 +1,4 @@
  import './components/assets/css/App.css'
-import Main from './components/Main'
 // import Navbar from './components/Navbar';
 import './components/assets/css/App.css'
 import Register from './components/Register'
@@ -11,11 +10,11 @@ import { OrderCancel } from './components/order-cancel'
 import { OrderPlace } from './components/order-place'
 import { OrderDetail } from './components/order-detail'
 import { CancelAlert } from './components/alert-order'
+import Noorder from './components/noorderpage'
 
 function App() {
   return (
     <>
-  {/* <CancelAlert/> */}
     <BrowserRouter>
        <Routes>
         <Route path="/" element={<Signin/>}></Route>
@@ -26,6 +25,7 @@ function App() {
         <Route path="/order-detail" element={<OrderDetail/>}></Route>
         <Route path="/order-cancel" element={<OrderCancel/>}></Route>
         <Route path="/cancel-order" element={<CancelAlert/>}></Route>
+        <Route path="/no-order" element={<Noorder/>}></Route>
        </Routes>
       </BrowserRouter>
     </>

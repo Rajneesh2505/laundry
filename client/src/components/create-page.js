@@ -30,7 +30,7 @@ export const Create=()=>{
     const navigate=useNavigate()
     const obj =useSelector(state=>state.data.products)
     return (
-        <>
+        <div className="createorderdiv">
        <div className="container">
 <Navbar/>
 <div style={{display:"flex"}}>
@@ -108,6 +108,6 @@ export const Create=()=>{
 </div>
 <Footer/> 
         
-        </>
+        </div>
     )
 }
