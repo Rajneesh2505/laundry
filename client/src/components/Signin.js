@@ -27,13 +27,18 @@ const Signin = ()=>{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         data:JSON.stringify(data)
-      }).then(data=>{
-        localStorage.setItem("Auth_token",data.data)
+      }).then(Data=>{
+        localStorage.setItem("Auth_token",Data.data[0])
+        console.log("Token",Data.data[0])
+        console.log("Name",Data.data[1])
+        localStorage.length? localStorage.setItem("Name",Data.data[1]):localStorage.setItem("Name","")
+        localStorage.length >0 ? navigate("/create-order"): navigate("/");
       }).catch(({response})=>{
         setWarningMessage(response.data.message)
       })
 navigate("/no-order")
     }
+    
    }
 
     //function for checking the input which is field by user

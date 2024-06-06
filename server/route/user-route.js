@@ -45,7 +45,7 @@ if(valid){
         expireIn:Math.floor(Date.now()/1000)+(10*60),
         data:data[0].eemail
     },secretKey)
-    res.status(200).send(auth_token)
+    res.status(200).send([auth_token,data[0].name])
 }else{
     res.status(400).send({
         status:"fail",
@@ -61,32 +61,38 @@ if(valid){
     })
 }
 })
-
-
 })
+
 
 // route for order details page 
 
-route.get('/getorders', async(req,res)=>{
-    try{
-        const getorders = orders.find();
-        req.status(200).json({getorders})
-    }
-    catch(e){
-        req.status(400).json({message : e.message})
-    }
-})
+// route.get('/getorders', async(req,res)=>{
+//     try{
+//         const getorders = orders.find();
+//         req.status(200).json({getorders})
+//     }
+//     catch(e){
+//         req.status(400).json({message : e.message})
+//     }
+// })
 
 // route to create orders page 
 
-route.post('/createorder', async(req,res)=>{
-    try{
+// route.post('/createorder', async(req,res)=>{
+//     try{
       
-    }
-    catch(e){
+//     }
+//     catch(e){
 
-    }
-})
+//     }
+// })
+
+
+route.get("/getUserName",(req,res)=>{
+   userModel.find({email:req.body.email}).then(data=>{
+    console.log(data)
+   })
+  })
 
 
 

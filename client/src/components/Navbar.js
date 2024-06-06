@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
 import './assets/css/Navbar.css'
 const Navbar=()=>{
@@ -9,7 +9,7 @@ const Navbar=()=>{
                 <li className='home'>Home</li>
                 <li className='pricing'>Pricing</li>
                 <li className='career'>Career</li>
-                <li><button className='button'>signin</button></li>
+                <li><button className='button'><b>{localStorage.length ? localStorage.getItem("Name"):"Sign In"}</b></button></li>
             </ul>
         </div>
     )

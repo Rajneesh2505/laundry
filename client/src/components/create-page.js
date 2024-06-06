@@ -26,8 +26,6 @@ export const Create=()=>{
     const [washingState,setWashingState]=useState(false)
     const [ironState,setIronState]=useState(false)
     const [bleechingState,setbleechingState]=useState(false)
-    const [quantity,setQuantity]=useState("")
-    const [price,setPrice]=useState()
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const obj =useSelector(state=>state.data.products)
@@ -43,7 +41,6 @@ export const Create=()=>{
     <div>Product Types</div>
     <div>Qunatity</div>
     <div>Wash Type</div>
-    <div>Price</div>
     <div></div>
 </div>
 {item.map((product,i)=>{
@@ -58,7 +55,6 @@ export const Create=()=>{
             <input type="text" className="input-box"  onChange={(e)=>{
                                         dispatch(addName(product));
                                         dispatch(addValue(e.target.value))
-                                        setQuantity(e.target.value)
                                     }}/>
         </div>
         <div className="wash-type">
@@ -85,20 +81,17 @@ export const Create=()=>{
                                              dispatch(addWashType([e.target.alt,30]))
                                         }}/>
             <img src={Bleach} alt="Chemical wash," id="bleach" onClick={(e)=>{
-                setPrice(price+40)
                 setbleechingState(!bleechingState)
                 if(bleechingState){
                     document.querySelectorAll(`#bleach`)[i].src=BleachAdded
                 }else{
                     document.querySelectorAll(`#bleach`)[i].src=Bleach 
                 }
-                console.log(quantity+"and"+price)
-                document.querySelector(`#${[product]}`).textContent=(Number(quantity)*price)
                                             dispatch(addWashType([e.target.alt,40]))
                                         }}/>
         </div>
-        <div id={product}>-</div>
-        <div><button className="confirm-button" onClick={()=>{setQuantity(" ");dispatch(confirmOrder())}}>Confirm</button></div>
+        {/* <div id={product}>-</div> */}
+        <div><button className="confirm-button" onClick={()=>{dispatch(confirmOrder())}}>Confirm</button></div>
         </div>
         <hr></hr>
         </Fragment>
