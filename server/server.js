@@ -8,13 +8,7 @@ const storeController=require("./route/store-route")
 
 // Connection with MongoDB or DataBase
 
-
-mongoose.connect("mongodb+srv://Rajneesh:Rajneesh@laundry-cart.oswq2vb.mongodb.net/laundry?retryWrites=true&w=majority&appName=Laundry-cart")
-
-
-
-
-
+mongoose.connect("mongodb+srv://rajneesh:Rajneesh@laundry-cart.oswq2vb.mongodb.net/laundry?retryWrites=true&w=majority&appName=Laundry-cart")
 //Middlewares
 
 app.use(express.json())

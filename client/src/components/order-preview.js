@@ -21,6 +21,7 @@ export const OrderPreview=()=>{
     const total=products.reduce((a,b)=>{
 return a+(b.price*b.quantity)
     },0)
+    console.log(products)
     const handleOrder=()=>{
         if(products.length){
             console.log("id for order is",id)
