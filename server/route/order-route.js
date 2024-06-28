@@ -1,6 +1,7 @@
 const express=require("express")
 const route=express.Router()
 const orderModel=require("../models/order-schema")
+const order = require("../models/order-schema")
 route.post("/order",(req,res)=>{ 
 
         orderModel.create(req.body).then(data=>{
