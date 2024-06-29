@@ -10,7 +10,7 @@ export const OrderCancel=()=>{
     const [orders,setOrders]=useState([])
     const [storeDetail,setStoreDetail]=useState([])
     useEffect(()=>{
-       fetch("http://localhost:3000/orders/getorder").then(rwadata=>{
+       fetch("https://laundry-6.onrender.com").then(rwadata=>{
         return rwadata.json()
        }).then(data=>{
        data.filter(item=>{

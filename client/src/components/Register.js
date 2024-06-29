@@ -37,7 +37,7 @@ const Register = () => {
     ) {
       setWarnMsg("All fields are mendatory. fill all the fields.");
     } else {
-      fetch("http://localhost:3000/user/registration", {
+      fetch("https://laundry-6.onrender.com", {
         method: "POST",
         headers: {
           "content-type": "application/json",

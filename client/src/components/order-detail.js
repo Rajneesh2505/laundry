@@ -13,13 +13,13 @@ export const OrderDetail=()=>{
     const [orders,setOrders]=useState([])
     const [storeDetail,setStoreDetail]=useState([])
     useEffect(()=>{
-        fetch("http://localhost:3000/orders/getorder").then(data=>{
+        fetch("https://laundry-6.onrender.com").then(data=>{
             return data.json()
         }).then(data=>{
             setOrders(data)
         })
 
-        fetch("http://localhost:3000/store").then(store=>{
+        fetch("https://laundry-6.onrender.com").then(store=>{
             return store.json()
         }).then(storeData=>{
        setStoreDetail([...storeData])

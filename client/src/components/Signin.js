@@ -23,7 +23,7 @@ const Signin = ()=>{
       setWarningMessage("All fields are mendatory. fill all the fields.")
     }else{
       axios({
-        url:"http://localhost:3000/user/signin",
+        url:"https://laundry-6.onrender.com",
         method:"POST",
         headers:{"Content-Type":"application/json"},
         data:JSON.stringify(data)

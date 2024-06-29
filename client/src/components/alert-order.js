@@ -6,7 +6,7 @@ export const CancelAlert=()=>{
     const navigate=useNavigate()
 
     const handleProceed=()=>{
-        fetch("http://localhost:3000/updateOrder",{
+        fetch("https://laundry-6.onrender.com",{
             method:"PUT",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(id)
